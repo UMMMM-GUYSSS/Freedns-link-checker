@@ -4,12 +4,14 @@ A Fast way to check freedns links on any blocker, this uses a python script and 
 How To use
 
 Setup 
-Step 1 go to https://live.glseries.net/ and create an account for it, 
+Step 1 Install required depenices, pip install opencv-python and pip install pyautogui pyperclip pillow
+
+Step 2 go to https://live.glseries.net/ and create an account for it, 
 after you create you account go to https://live.glseries.net/dashboard and create an api token write them down for later
 
-Step 2 download the python script replace Example_Api_Token with the token from glseries, 
+Step 3 download the python script replace Example_Api_Token with the token from glseries, 
 
-Step 3 In the same folder the python script is in add two txt files unblocked.txt and links.txt 
+Step 4 In the same folder the python script is in add two txt files unblocked.txt and links.txt 
 Unblocked links will go in unblocked.txt and links you wanna check go in links.txt
 
 
