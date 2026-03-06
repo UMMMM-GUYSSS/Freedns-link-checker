@@ -2,7 +2,7 @@ import requests
 import json
 import time
 
-API_TEMPLATE = "https://live.glseries.net/api/v1/check?token=gl_174387f8fda572be94dc07feb4be5ae90cddb1f32fb8cb36&url={}"
+API_TEMPLATE = "https://live.glseries.net/api/v1/check?token=Example_Api_Token&url={}"
 
 INPUT_FILE = "links.txt"
 OUTPUT_FILE = "progress.txt"
@@ -38,5 +38,6 @@ for url in urls:
         with open(OUTPUT_FILE, "a", encoding="utf-8") as out:
             out.write(f"{url} unblocked\n")
         print(f"{url} → unblocked")
+
 
     time.sleep(0.5)  # small delay to avoid API spam
