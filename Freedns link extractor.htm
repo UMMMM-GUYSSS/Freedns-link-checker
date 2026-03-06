@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Link Extractor</title>
+<style>
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    padding: 10px 20px;
+    background-color: #1f1f1f;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  textarea {
+    width: calc(100% - 40px);
+    margin: 20px;
+    padding: 15px;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 16px;
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  #buttons {
+    margin: 0 20px 20px 20px;
+  }
+
+  button {
+    background-color: #3b3b3b;
+    color: #e0e0e0;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+  }
+
+  button:hover {
+    background-color: #555;
+  }
+
+  #links-container {
+    margin: 0 20px 20px 20px;
+  }
+
+  a {
+    color: #81a1c1;
+    text-decoration: none;
+    display: block;  /* makes links stack vertically */
+    margin: 5px 0;
+    word-break: break-word;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<header>Link Extractor (Dark Mode)</header>
+
+<textarea id="inputText" placeholder="Paste your text here..."></textarea>
+
+<div id="buttons">
+  <button onclick="extractLinks()">Extract Links</button>
+  <button onclick="copyLinks()">Copy All Links</button>
+</div>
+
+<div id="links-container"></div>
+
+<script>
+function extractLinks() {
+  const text = document.getElementById('inputText').value;
+  const regex = /\b(?:[a-z0-9-]+\.)+[a-z]{2,}\b/gi;
+  const matches = text.match(regex) || [];
+  const unique = [...new Set(matches)];
+
+  const container = document.getElementById('links-container');
+  container.innerHTML = '';
+
+  unique.forEach(link => {
+    const a = document.createElement('a');
+    a.href = 'https://' + link;
+    a.target = '_blank';
+    a.textContent = link;
+    container.appendChild(a);
+  });
+}
+
+function copyLinks() {
+  const container = document.getElementById('links-container');
+  const links = Array.from(container.getElementsByTagName('a'))
+                     .map(a => a.href)
+                     .join('\n');
+  navigator.clipboard.writeText(links).then(() => {
+    alert('Links copied to clipboard!');
+  });
+}
+</script>
+
+</body>
+</html>
