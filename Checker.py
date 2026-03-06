@@ -15,7 +15,6 @@ def check_url(url):
 
         data = r.json()
 
-        # Look through filters to find Lightspeed
         for item in data.get("results", []):
             if item.get("name") == "Lightspeed":
                 return item.get("blocked")
@@ -41,3 +40,4 @@ for url in urls:
 
 
     time.sleep(0.5)  # small delay to avoid API spam
+
