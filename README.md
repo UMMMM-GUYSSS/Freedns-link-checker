@@ -4,14 +4,16 @@ A Fast way to check freedns links on any blocker, this uses a python script and 
 How To use
 
 Setup 
-Step 1 Install required depenices, pip install opencv-python and pip install pyautogui pyperclip pillow
+Install required depenices, pip install opencv-python and pip install pyautogui pyperclip pillow
 
-Step 2 go to https://live.glseries.net/ and create an account for it, 
+go to https://live.glseries.net/ and create an account for it, 
 after you create you account go to https://live.glseries.net/dashboard and create an api token write them down for later
 
-Step 3 download the python script replace Example_Api_Token with the token from glseries, 
 
-Step 4 In the same folder the python script is in add two txt files unblocked.txt and links.txt 
+
+Step 1 download the python script and run it enter in your api key and what blocker you want to check links for
+
+Step 2 In the same folder the python script is in add 2 txt files unblocked.txt and links.txt 
 Unblocked links will go in unblocked.txt and links you wanna check go in links.txt
 
 
@@ -20,4 +22,4 @@ Extra / Info
 Default blocker is Lightspeed but you can go to https://live.glseries.net/api/v1/filters and find the name of the blocker you wanna check freedns links for, and replace the blocker name 
 There is a limit on the amount of links you can check weekly 50k, but its per api so just create a new api before you run out and also you can create 5 api keys at a time
 
-This was created by yourlosingblood on discord
+This was created by @yourlosingblood on discord
